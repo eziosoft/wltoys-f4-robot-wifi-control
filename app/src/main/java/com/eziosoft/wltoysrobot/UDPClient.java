@@ -73,28 +73,26 @@ public class UDPClient {
     }
 
 
-    public void Start()
-    {
+    public synchronized void Start() {
         running = true;
         startSendingStartFrames();
         StartSendingControlFrames();
     }
 
-    public void Stop()
-    {
+    public synchronized void Stop() {
         running = false;
     }
 
-    public void setFR(int FR) {
+    public synchronized void setFR(int FR) {
         this.FR = FR;
+
     }
 
-    public void setLR(int LR) {
+    public synchronized void setLR(int LR) {
         this.LR = LR;
     }
 
-    public void setMode(int mode)
-    {
-        this.mode=mode;
+    public synchronized void setMode(int mode) {
+        this.mode = mode;
     }
 }
