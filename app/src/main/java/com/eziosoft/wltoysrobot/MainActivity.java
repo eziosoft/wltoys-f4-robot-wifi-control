@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
     SeekBar.OnSeekBarChangeListener onSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            Log.d("aaa", "s onProgressChanged " + String.valueOf(i));
             udpClient.setFR(s1.getProgress());
             udpClient.setLR(s2.getProgress());
 
