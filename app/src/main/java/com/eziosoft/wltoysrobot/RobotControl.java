@@ -9,13 +9,11 @@ import java.net.InetAddress;
  * Written by Bartosz Szczygiel <eziosoft@gmail.com>
  * Created on 14/12/2017.
  */
-public class UDPClient {
+public class RobotControl {
     private boolean running = true;
-    private int FR, LR, mode;
-
+    private int FR = Protocol.MID, LR = Protocol.MID, mode = 0;
 
     private void StartSendingControlFrames() {
-
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -38,14 +36,12 @@ public class UDPClient {
             }
         };
 
-
         Thread thread = new Thread(runnable);
         thread.start();
     }
 
 
     private void startSendingStartFrames() {
-
         final Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -67,7 +63,6 @@ public class UDPClient {
             }
         };
 
-
         Thread thread = new Thread(runnable);
         thread.start();
     }
@@ -85,7 +80,6 @@ public class UDPClient {
 
     public synchronized void setFR(int FR) {
         this.FR = FR;
-
     }
 
     public synchronized void setLR(int LR) {
