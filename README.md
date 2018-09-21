@@ -28,6 +28,7 @@ Communication through UDP port 40000, destination IP: 192.168.0.1
 
 CRC - XOR of 5 bytes before CRC. seems to be working fine
 
+More pictures in teardown folder
 ![alt text](teardown/IMG_20180921_195735.jpg)
 
 
